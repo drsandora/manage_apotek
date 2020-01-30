@@ -37,7 +37,7 @@
                                    
                                   <div class="input-group">
                                     <div class="custom-file">
-                                        <img src="{{asset('uploads/apotek/'. $apotek->avatar)}}" width="100px" height="100px" alt="image">
+                                        <img src="{{asset('images/'. $apotek->avatar)}}" width="100px" height="100px" alt="image">
                                       <input type="file" name="avatar" id="avatar" class="custom-file-input" >
                                       <label class="custom-file-label" >Pilih Gambar</label>
                                     </div>

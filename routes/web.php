@@ -11,13 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/login', 'AuthController@login')->name('login');
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('/', 'AuthController@login')->name('login');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
 
+Route::get('/pencarian', 'ApiController@index');
+Route::get('/dabat', 'ApiController@data_obat');
+Route::get('/key',function(){
+    return Str::   random(30);
+});
 
 Route::group(['middleware' => ['auth', 'checkRole:admin,apotek']], function () {
     Route::get('/dashboard', 'DashboardController@dashboard');
